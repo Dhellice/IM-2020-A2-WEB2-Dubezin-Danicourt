@@ -14,13 +14,13 @@
                             <div class="form-group">
                                 <label class="control-label col-sm-2" for="title">Title</label>
                                 <div class="col-sm-10">
-                                    <input required type="text" value="{{$article->title}}" name="title">
+                                    <input required type="text" class="form-control" value="{{$article->title}}" name="title">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-sm-2" for="content">Content</label>
                                 <div class="col-sm-10">
-                                    <textarea name="content" id="" cols="30" rows="10">{{$article->content}}</textarea>
+                                    <textarea name="content" class="form-control" id="" cols="30" rows="10">{{$article->content}}</textarea>
                                 </div>
                             </div>
                             <div class="form-group">
