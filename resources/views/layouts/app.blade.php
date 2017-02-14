@@ -44,6 +44,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         &nbsp; <li><a href="{{ route('article.index') }}">Articles</a></li>
+                          <li><a href="{{ route('contact') }}">Nous Contacter</a></li>
                           <li><a href="{{ url('/user') }}">Vos Articles</a></li>
                     </ul>
 
