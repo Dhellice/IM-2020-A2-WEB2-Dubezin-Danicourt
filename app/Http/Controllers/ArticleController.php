@@ -54,7 +54,7 @@ class ArticleController extends Controller
             'content' => $request->content
         ]);
 
-        return redirect()->route('article.index');
+        return redirect()->route('article.index')->with('success', 'Article créé');;
 
     }
 

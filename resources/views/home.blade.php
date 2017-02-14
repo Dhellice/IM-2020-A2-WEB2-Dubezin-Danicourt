@@ -8,7 +8,13 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    @if(Auth::check())
+                    @if(session('success'))
+                        <div class="alert alert-success">
+                            {{session('success')}}
+                        </div>
+                    @endif
+
+                @if(Auth::check())
                         <h2>Bonjour, {{Auth::user()->name}}</h2>
                     @else
                         <h2>Bonjour invité</h2>

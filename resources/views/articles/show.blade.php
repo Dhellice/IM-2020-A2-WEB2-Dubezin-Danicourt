@@ -24,13 +24,10 @@
                             @endif
                         </p>
 
-
-                        <a href="{{ route('article.like', $article->id) }}">Like this awesome product!</a><br>
-
-
-
-                        <a class="btn btn-default navbar-btn"  data-toggle="modal" data-target="#myModal2"> Partager sur les réseaux sociaux </a><br>
-                        <a class="btn btn-default navbar-btn" href="{{route('article.index')}}">Retour</a>
+                            <a class="btn btn-primary navbar-btn" href="{{ route('article.like', $article->id) }}">Aimer l'Article</a><br>
+                            <a class="btn btn-primary navbar-btn" href="{{route('article.edit', [$article->id])}}">Modifier l'article</a><br>
+                                <a class="btn btn-default navbar-btn" data-toggle="modal" data-target="#myModal2"> Partager sur les réseaux sociaux </a><br>
+                            <a class="btn btn-default navbar-btn" href="{{route('article.index')}}">Retour</a>
                     </div>
                 </div>
             </div>
