@@ -27,6 +27,11 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('/user', 'UserController@index');
 
+Route::get('/contact',
+    ['as' => 'contact', 'uses' => 'FormsController@create']);
+Route::post('/contact',
+    ['as' => 'contact_store', 'uses' => 'FormsController@store']);
+
 
 //EXO1
 
