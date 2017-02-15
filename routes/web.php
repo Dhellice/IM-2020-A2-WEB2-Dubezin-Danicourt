@@ -34,6 +34,7 @@ Route::get('/contact',
 Route::post('/contact',
     ['as' => 'contact_store', 'uses' => 'FormsController@store']);
 
+Route::post('/article/{article}/comments', 'CommentsController@store');
 
 //EXO1
 

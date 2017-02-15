@@ -27,12 +27,53 @@
                             <a class="btn btn-primary navbar-btn" href="{{ route('article.like', $article->id) }}">Aimer l'Article</a><br>
                             <a class="btn btn-primary navbar-btn" href="{{route('article.edit', [$article->id])}}">Modifier l'article</a><br>
                                 <a class="btn btn-default navbar-btn" data-toggle="modal" data-target="#myModal2"> Partager sur les réseaux sociaux </a><br>
+
+
+                            <hr>
+
+                            <div class="comments">
+                                <ul class="list-group">
+                                    @foreach ($article->comments as $comment)
+                                        <li class="list-group-item">
+                                            <strong>
+                                                {{ $comment->created_at->diffForHumans() }}
+                                            </strong>
+                                            {{ $comment->body }}
+                                        </li>
+                                    @endforeach
+
+                                </ul>
+                            </div>
+
+
+                            <hr>
+
+                            <div class="card">
+                                <div class="card-block">
+                                    <form method="POST" action="/article/{{ $article->id }}/comments">
+
+                                        {{ csrf_field() }}
+                                        <div class="form-group">
+                                            <textarea name="body" placeholder="Votre commentaire." class="form-control">
+
+                                            </textarea>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary">Ajouter</button>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+
                             <a class="btn btn-default navbar-btn" href="{{route('article.index')}}">Retour</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 
 
     <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
