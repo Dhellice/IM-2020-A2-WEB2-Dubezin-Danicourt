@@ -35,6 +35,7 @@ Route::post('/contact',
     ['as' => 'contact_store', 'uses' => 'FormsController@store']);
 
 
+
 //EXO1
 
 /*Route::get('/iim', function() {
