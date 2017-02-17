@@ -18,10 +18,19 @@ Route::get('/', function () {
 
 
 Route::resource('/article', 'ArticleController');
+Route::resource('/comment', 'CommentsController');
+
 
 Route::get('article/like/{id}', ['as' => 'article.like', 'uses' => 'LikeController@likeArticle']);
 
-Route::get('/admin', 'AdminsController@index');
+Route::get('/admin', ['as' => 'admin.index', 'uses' => 'AdminsController@index']);
+Route::get('/admin/{article}', ['as' => 'admin.show', 'uses' => 'AdminsController@show']);
+Route::get('/admin/{comment}', ['as' => 'admin.showcomment', 'uses' => 'AdminsCommentsController@show']);
+
+
+
+
+
 
 Auth::routes();
 
@@ -34,6 +43,7 @@ Route::get('/contact',
 Route::post('/contact',
     ['as' => 'contact_store', 'uses' => 'FormsController@store']);
 
+Route::post('/article/{article}/comments', 'CommentsController@store');
 
 
 //EXO1

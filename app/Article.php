@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
 {
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
+    }
     /**
      * The attributes that are mass assignable.
      *
