@@ -45,7 +45,6 @@ Route::post('/contact',
 
 Route::post('/article/{article}/comments', 'CommentsController@store');
 
-
 //EXO1
 
 /*Route::get('/iim', function() {

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Article;
 use App\Comment;
+
 use Illuminate\Support\Facades\Request;
 
 class CommentsController extends Controller
@@ -15,6 +16,7 @@ class CommentsController extends Controller
         return view('comments.index', ['comments' => $comments]);
     }
 
+
     public function store(Article $article)
     {
         Comment::create([
@@ -25,6 +27,7 @@ class CommentsController extends Controller
 
         return back();
     }
+
 
     public function show($id)
     {
@@ -85,4 +88,5 @@ class CommentsController extends Controller
         return redirect()->route('article.index')->with('success', 'Commentaire supprimé');
 
     }
+
 }
