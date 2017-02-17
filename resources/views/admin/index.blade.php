@@ -8,7 +8,7 @@
                     <div class="panel-heading">Dashboard</div>
 
                     <hr>
-                    <div class="panel-heading" style="font-size:20px; text-align:center;">Articles</div>
+                    <h1 class="panel-heading" style="text-align:center;">Articles</h1>
 
                     <div class="panel-body">
 
@@ -47,7 +47,7 @@
                     </div>
 
                     <hr>
-                    <div class="panel-heading" style="font-size:20px; text-align:center;">Commentaires</div>
+                    <h1 class="panel-heading" style="text-align:center;">Commentaires</h1>
                         <div class="panel-body">
 
                         @forelse($comments as $comment)

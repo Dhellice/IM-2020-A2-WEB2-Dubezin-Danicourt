@@ -10,12 +10,11 @@
 
                     <div class="panel-body">
 
-                        @foreach ($article->likes as $user)
+                        @foreach ($articles->likes as $user)
                             {{ $user->name }} likes this !
                         @endforeach
 
-
-                        @if ($article->isLiked)
+                        @if ($articles->isLiked)
                             <a href="{{ route('article.like', $article->id) }}">Unlike this shit</a>
                         @else
                             <a href="{{ route('article.like', $article->id) }}">Like this awesome product!</a>
