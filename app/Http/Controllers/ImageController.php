@@ -1,4 +1,5 @@
 <?php namespace App\Http\Controllers;
+use App\Article;
 use App\Http\Requests;
 use Guzzle\Tests\Plugin\Redirect;
 use App\Image;
@@ -7,6 +8,18 @@ use Illuminate\Support\Facades\Input;
 use Symfony\Component\HttpFoundation\Response;
 
 class ImageController extends Controller {
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $articles = Article::paginate(5);
+
+        return view('image.index', ['articles' => $articles]);
+    }
 
     /**
      * Show the form for uploading a new resource.

@@ -46,6 +46,9 @@ Route::post('/contact',
 Route::post('/article/{article}/comments', 'CommentsController@store');
 
 Route::get('/image',
+    ['as' => 'image.index', 'uses' => 'ImageController@index' ]);
+
+Route::get('/image/upload',
     ['as' => 'image.upload', 'uses' => 'ImageController@upload' ]);
 
 Route::post('/image',
