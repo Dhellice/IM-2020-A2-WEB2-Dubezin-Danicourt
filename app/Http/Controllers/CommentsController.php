@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Article;
 use App\Comment;
 
-use Illuminate\Support\Facades\Request;
+use Illuminate\Http\Request;
 
 class CommentsController extends Controller
 {

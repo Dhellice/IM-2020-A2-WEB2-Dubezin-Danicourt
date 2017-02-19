@@ -25,7 +25,7 @@ Route::get('article/like/{id}', ['as' => 'article.like', 'uses' => 'LikeControll
 
 Route::get('/admin', ['as' => 'admin.index', 'uses' => 'AdminsController@index']);
 Route::get('/admin/{article}', ['as' => 'admin.show', 'uses' => 'AdminsController@show']);
-Route::get('/admin/{comment}', ['as' => 'admin.showcomment', 'uses' => 'AdminsCommentsController@show']);
+Route::get('/admin/commentaires/{comment}', ['as' => 'admin.showcomment', 'uses' => 'AdminsCommentsController@show']);
 
 
 
