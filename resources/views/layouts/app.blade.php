@@ -12,7 +12,9 @@
 
     <!-- Styles -->
     <link href="{{asset('css/app.css')}}" rel="stylesheet">
-
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <!-- Scripts -->
     <script>
         window.Laravel = {!! json_encode([
@@ -47,7 +49,6 @@
                         &nbsp; <li><a href="{{ route('article.index') }}">Articles</a></li>
                           <li><a href="{{ route('contact') }}">Nous Contacter</a></li>
                           <li><a href="{{ url('/user') }}">Vos Articles</a></li>
-                          <li><a href="{{ url('article/create') }}">Nouvel article</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -75,6 +76,7 @@
                                         </form>
                                     </li>
                                     <li><a href="{{ url('/user') }}">Vos Articles</a></li>
+                                    <li><a href="{{ url('article/create') }}">Nouvel article</a></li>
                                 </ul>
                             </li>
                         @endif

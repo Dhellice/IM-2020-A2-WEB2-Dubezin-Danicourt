@@ -45,6 +45,15 @@ Route::post('/contact',
 
 Route::post('/article/{article}/comments', 'CommentsController@store');
 
+Route::get('/image',
+    ['as' => 'image.upload', 'uses' => 'ImageController@upload' ]);
+
+Route::post('/image',
+    ['as' => 'image.store', 'uses' =>'ImageController@store' ]);
+
+Route::get('/imagelist',
+    ['as' => 'imagelist', 'uses' =>'ImageController@show' ]);
+
 //EXO1
 
 /*Route::get('/iim', function() {
