@@ -25,27 +25,12 @@
                         </p>
 
                             <a class="btn btn-primary navbar-btn" href="{{ route('article.like', $article->id) }}">Aimer l'Article</a><br>
-                                <a class="btn btn-default navbar-btn" data-toggle="modal" data-target="#myModal2"> Partager sur les réseaux sociaux </a><br>
+                            <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                            <div class="addthis_inline_share_toolbox"></div>
 
 
                             <hr>
 
-                            <div class="comments">
-                                <ul class="list-group">
-                                    @foreach ($article->comments as $comment)
-                                        <li class="list-group-item">
-                                            <strong>
-                                                {{ $comment->created_at->diffForHumans() }}
-                                            </strong>
-                                            {{ $comment->body }}
-                                        </li>
-                                    @endforeach
-
-                                </ul>
-                            </div>
-
-
-                            <hr>
 
                             <div class="card">
                                 <div class="card-block">
@@ -67,6 +52,20 @@
                             </div>
 
                             <a class="btn btn-default navbar-btn" href="{{route('article.index')}}">Retour</a>
+                            <hr>
+                            <div class="comments">
+                                <ul class="list-group">
+                                    @foreach ($article->comments as $comment)
+                                        <li class="list-group-item">
+                                            <strong>
+                                                {{ $comment->created_at->diffForHumans() }}
+                                            </strong>
+                                            {{ $comment->body }}
+                                        </li>
+                                    @endforeach
+
+                                </ul>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -75,21 +74,5 @@
 
 
 
-    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Partager sur les réseaux sociaux</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="text-center">
-                        <a class="btn btn-default navbar-btn"  data-toggle="modal" data-target="#myModal2" href="#" onclick='window.open("http://www.facebook.com/sharer.php?u=http://127.0.0.1:8000/article/{article}", "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, width=640, height=400");'> Partager sur Facebook </a>
-                        <a class="btn btn-default navbar-btn"  data-toggle="modal" data-target="#myModal2" href="#" onclick='window.open("https://twitter.com/intent/tweet?text=Trop+Beau+Site+!&url=http://127.0.0.1:8000/article/{id}", "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, width=640, height=400");'> Partager sur Twitter </a>
-                        <a class="btn btn-default navbar-btn"  data-toggle="modal" data-target="#myModal2" > Partager sur Instagram </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
 @endsection
