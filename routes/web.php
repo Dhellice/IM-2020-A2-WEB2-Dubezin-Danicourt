@@ -36,7 +36,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/user', 'UserController@index');
+Route::get('/user', ['as' => 'user', 'uses' => 'UserController@index']);
 
 Route::get('/contact',
     ['as' => 'contact', 'uses' => 'FormsController@create']);
